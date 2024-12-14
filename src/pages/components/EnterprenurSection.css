@@ -1,0 +1,77 @@
+/* styles.css */
+@keyframes slide {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  
+  .card {
+    animation: slide 2s ease-in-out forwards;
+    position: absolute; /* Allows overlapping */
+    width: 100%; /* Ensures full width */
+  }
+  
+  .container {
+    position: relative; /* For positioning cards */
+    overflow: hidden; /* Hides overflowing cards */
+    height: 100%; /* Set a height for the container */
+  }
+  
+  /* styles.css */
+.container {
+    position: relative;
+    height: 400px; /* Set your desired height */
+    overflow: hidden;
+  }
+  
+  .cards {
+    position: absolute;
+    width: 100%;
+    animation: slide 12s linear infinite; /* Adjust timing for smoother transition */
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-100%);
+    }
+    45% {
+      transform: translateY(-100%);
+    }
+    50% {
+      transform: translateY(-200%);
+    }
+    70% {
+      transform: translateY(-200%);
+    }
+    75% {
+      transform: translateY(-300%);
+    }
+    95% {
+      transform: translateY(-300%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .gradient-large {
+    background-size: 1000px 100%; 
+  }
+  
+
+
+  
