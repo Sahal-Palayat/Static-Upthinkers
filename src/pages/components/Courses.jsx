@@ -1,135 +1,130 @@
-'use client'
 
-import { motion } from "framer-motion"
-import Footer from "./Footer"
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const programs = [
+gsap.registerPlugin(ScrollTrigger);
+
+const animations = [
+  "hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out",
+  "hover:rotate-1 hover:shadow-md transition-transform duration-300 ease-in-out",
+  "hover:-rotate-1 hover:shadow-md transition-transform duration-300 ease-in-out",
+  "hover:translate-y-[-5px] hover:shadow-md transition-transform duration-300 ease-in-out",
+];
+
+export default function InfiniteCarousel() {
+  const scrollRef = useRef(null);
+  const [isAnimating, setIsAnimating] = useState(true);
+
+  const courses = [
     {
-        id: 1,
-        title: "English For Today",
-        price: 60.99,
-        image: "https://i.graphicmama.com/blog/wp-content/uploads/2018/02/21095725/Children-Book-Illustrations-Breathtaking-Examples-for-Inspiration.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed urna consectetur.",
-        instructor: {
-            name: "Mary Mordem",
-            role: "Art Designer",
-            avatar: "/placeholder.svg?height=40&width=40"
-        }
+      id: 1,
+      title: "React Essentials",
+      image: "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
     },
     {
-        id: 2,
-        title: "Graphics Arts",
-        price: 60.99,
-        image: "https://i.graphicmama.com/blog/wp-content/uploads/2018/02/21095725/Children-Book-Illustrations-Breathtaking-Examples-for-Inspiration.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed urna consectetur.",
-        instructor: {
-            name: "Mary Mordem",
-            role: "Art Designer",
-            avatar: "/placeholder.svg?height=40&width=40"
-        }
+      id: 2,
+      title: "Advanced JavaScript",
+      image: "https://media.istockphoto.com/id/1353769234/photo/training-and-skill-development-concept-with-icons-of-online-course-conference-seminar-webinar.jpg?s=612x612&w=0&k=20&c=2YJG1My6Lu1T1FnzIPbimRNORcSbSuz6A8zb7HKNpx4=",
     },
     {
-        id: 3,
-        title: "General Science",
-        price: 60.99,
-        image: "https://i.graphicmama.com/blog/wp-content/uploads/2018/02/21095725/Children-Book-Illustrations-Breathtaking-Examples-for-Inspiration.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed urna consectetur.",
-        instructor: {
-            name: "Mary Mordem",
-            role: "Art Designer",
-            avatar: "/placeholder.svg?height=40&width=40"
-        }
+      id: 3,
+      title: "CSS Mastery",
+      image: "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
+    },
+    {
+      id: 4,
+      title: "Node.js Fundamentals",
+      image: "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
+    },
+    {
+      id: 5,
+      title: "Python Basics",
+      image: "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
+    },
+  ];
+
+  // Duplicate items for seamless infinite scrolling
+  const extendedCourses = [...courses, ...courses];
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      const carousel = scrollRef.current;
+      const totalWidth = carousel.scrollWidth;
+      const itemWidth = carousel.firstElementChild?.clientWidth || 0;
+
+      const tl = gsap.timeline({
+        repeat: -1,
+        paused: !isAnimating,
+      });
+
+      tl.to(carousel, {
+        x: -totalWidth / 2,
+        duration: 20,
+        ease: "none",
+      });
+
+      tl.to(carousel, {
+        x: 0,
+        duration: 0,
+      });
+
+      return () => {
+        tl.kill();
+      };
     }
-]
+  }, [isAnimating]);
 
-export default function EducationalPrograms() {
-    return (
-        <div className="min-h-screen bg-pink-50 py-12 px-4 sm:px-6 lg:px-8">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="max-w-7xl mx-auto text-center"
+  return (
+    <div className="relative py-12 bg-gradient-to-b bg-white/20 mx-10 mb-10 overflow-hidden font-sans backdrop-blur-sm rounded-[60px] transition-colors duration-300">
+      <h2 className="text-4xl text-center font-bold mt-10 text-indigo-900 mb-12">
+        We Offer An Exclusive
+        <br />
+        Program For Kids
+        <br /><br />
+        <h4 className="text-2xl text-black font-semibold mx-10">
+          Enroll now to map young minds for a bright future! Mindmap Jr builds confidence, essential habits, and problem-solving skills, setting the foundation for success.
+        </h4>
+      </h2>
+      <br />
+      <div
+        className="relative w-full h-[450px] overflow-hidden"
+        onMouseEnter={() => setIsAnimating(false)}
+        onMouseLeave={() => setIsAnimating(true)}
+      >
+        <div
+          ref={scrollRef}
+          className="flex space-x-4 absolute left-0 top-0 h-full"
+        >
+          {extendedCourses.map((course, index) => (
+            <div
+              key={`${course.id}-${index}`}
+              className={`flex-none w-80 mx-4 h-[400px] bg-white rounded-xl shadow-lg overflow-hidden ${
+                animations[index % animations.length]
+              }`}
             >
-                <span className="text-pink-500 lg:text-3xl text-lg font-medium relative">
-
-                    Courses              <span className="absolute bottom-0 left-1/2 w-10 h-1 bg-pink-500 rounded-full transform -translate-x-1/2" />
-                </span>
-                <h1 className="text-4xl font-bold mt-10 text-indigo-900 mb-12">
-                    We Offer An Exclusive
-                    <br />
-                    Program For Kids
-                </h1>
-
-                <div className=" ml-10 mr-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {programs.map((program, index) => (
-                        <motion.div
-                            key={program.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
-                        >
-                            <div className="relative">
-                                <img
-                                    src={program.image}
-                                    alt={program.title}
-                                    className="w-full h-48 object-cover"
-                                />
-                                <div className="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                                    ${program.price}
-                                </div>
-                            </div>
-                            <div className="p-6">
-                                <h3 className="text-xl font-semibold mb-2">{program.title}</h3>
-                                <p className="text-gray-600 mb-4 text-sm">{program.description}</p>
-                                <div className="flex items-center gap-3">
-                                    <img
-                                        src={program.instructor.avatar}
-                                        alt={program.instructor.name}
-                                        className="w-10 h-10 rounded-full"
-                                    />
-                                    <div className="text-left">
-                                        <p className="font-semibold text-sm">{program.instructor.name}</p>
-                                        <p className="text-xs text-gray-500">{program.instructor.role}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bg-gray-50 p-4 flex justify-between items-center text-xs text-gray-500">
-                                <div className="flex items-center gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <span>30 days</span>
-                                </div>
-                                <div className="flex items-center gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                    </svg>
-                                    <span>13 Lessons</span>
-                                </div>
-                                <div className="flex items-center gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <span>60 Hours</span>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-
-                <motion.button
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.8 }}
-                    className="mt-12 px-6 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors duration-300 font-semibold"
-                >
-                    View All Programs
-                </motion.button>
-            </motion.div>
-            
+              <img
+                src={course.image}
+                alt={course.title}
+                className="w-full h-60 object-cover rounded-xl"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold">{course.title}</h3>
+                <p className="mt-2 text-sm text-gray-600">
+                  Dive into {course.title.toLowerCase()} and master its concepts.
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
-    )
+      </div>
+
+      <div className="flex justify-center mt-8">
+        <button className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition-colors duration-300">
+          View All Programs
+        </button>
+      </div>
+    </div>
+  );
 }
 

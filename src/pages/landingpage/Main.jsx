@@ -14,27 +14,30 @@ import WhatWeDo from "../components/WhatWeDo";
 import Courses from "../components/Courses";
 import Footer from "../components/Footer";
 import NavbarAndHero from "../components/Hero";
+import InfiniaShowcase from "./SingleProduct";
+import InfiniteCarousel from "../components/Courses";
 
 const Main = () => {
   return (
     <>
       
-      <div className="bg-[url('/bg1.jpg')] bg-cover bg-center bg-fixed h-260vh w-full font-monstera">
+      <div className="bg-[url('/bg1.jpg')] bg-cover bg-center bg-fixed h-280vh w-full font-monstera">
       <Home/>
         {/* <NavbarAndHero/> */}
-        {/* <AboutSection/>
+        <AboutSection/>
         <WhatWeDo/>
-        <Courses/>
-        <Footer/> */}
-        {/* <FirstSection />
-        <HeroScrollDemo />
+        {/* <Courses/> */}
+        <InfiniteCarousel/>
+       {/* <InfiniaShowcase/> */}
+        {/* <FirstSection /> */}
+        {/* <HeroScrollDemo /> */}
         <ThirdSection />
-        <WhyTrustUs />
+        {/* <WhyTrustUs /> */}
         <ForthSection />
         <FifthSection />
-        <Pricing />
+        {/* <Pricing /> */}
         <SeventhSection />
-        <LastSection /> */}
+        <LastSection />
       </div>
       
     </>

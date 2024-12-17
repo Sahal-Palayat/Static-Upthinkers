@@ -50,12 +50,12 @@ export default function LastSection() {
     },
   ];
   return (
-    <div className="bg-white text-white min-h-fit items-center p-8 md:p-16">
+    <div className="bg-white text-white h-[200px] items-center p-8 md:p-16">
       <div className="w-full  max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-xl mb-10  ">
           <h1
             style={gradientStyle}
-            className="text-2xl font-bold md:text-4xl mb-6   mx-auto text-start relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white"
+            className="text-2xl font-bold md:text-4xl mb-6   mx-auto text-start relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-black dark:to-black"
           >
             Uptimewiz is best-in-class
           </h1>
@@ -103,7 +103,7 @@ export default function LastSection() {
         </div>
       </div>
 
-      <Footer />
+     
     </div>
   );
 }

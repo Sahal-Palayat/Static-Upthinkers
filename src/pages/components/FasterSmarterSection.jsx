@@ -34,16 +34,16 @@ export default function SecondSection() {
   ];
 
   return (
-    <div className="bg-white  min-h-screen flex flex-col items-center justify-center p-8 space-y-10">
+    <div className="bg-gradient-to-b bg-white/20 ml-10 mr-10 mb-10 overflow-hidden font-sans backdrop-blur-sm rounded-[60px] transition-colors duration-300  min-h-screen flex flex-col items-center justify-center p-8 space-y-10">
       <div className="text-center mb-10">
         <div className="grid gap-6 items-center justify-items-center">
           <h1
             style={gradientStyle}
-            className="md:text-5xl sm:text-2xl font-bold w-full sm:w-3/4 text-center py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white"
+            className="md:text-5xl sm:text-2xl font-bold w-full sm:w-3/4 text-center py-6 bg-clip-text text-transparent bg-gradient-to-b from-text-[#621b1b] via-[#800000] to-[#20477a] dark:from-neutral-800 dark:via-[#20477a] dark:to-[#800000]"
           >
             Proactive Uptime Monitoring for Your Peace of Mind
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl">
+          <p className="text-black text-lg max-w-2xl">
             UptimeWiz delivers round-the-clock monitoring to ensure your website
             or app stays online. We catch issues before they become problems,
             helping you maintain a seamless digital experience for your users.
@@ -53,10 +53,10 @@ export default function SecondSection() {
 
       <div className="w-full max-w-7xl space-y-8">
         <div className="p-1 sm:p-2 md:p-4 border border-gray-800 rounded-xl shadow-lg">
-          <h2 className="text-sm text-gray-400 sm:text-base md:text-lg font-semibold mb-2">
+          <h2 className="text-sm text-black sm:text-base md:text-lg font-semibold mb-2">
             Real-Time Monitoring
           </h2>
-          <p className="text-gray-400 mb-3 text-xs sm:text-sm md:text-base">
+          <p className="text-black mb-3 text-xs sm:text-sm md:text-base">
             Our platform tracks your website's health 24/7, providing instant
             notifications for outages and performance slowdowns, so you can take
             action fast.
@@ -200,10 +200,10 @@ export default function SecondSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Scalability Card */}
           <div className="relative p-6 rounded-xl shadow-lg flex flex-col">
-            <h2 className="text-xl text-gray-400  font-semibold mb-2">
+            <h2 className="text-xl text-black  font-semibold mb-2">
               Scalable Solutions
             </h2>
-            <p className="text-gray-400 mb-4">
+            <p className="text-black mb-4">
               UptimeWiz scales with your needs, whether you’re monitoring a
               single site or multiple complex applications across different
               regions.
@@ -226,7 +226,7 @@ export default function SecondSection() {
             <h2 className="text-sm sm:text-lg font-semibold text-white">
               Instant Alerts
             </h2>
-            <p className="text-gray-400 mb-2 sm:mb-3 text-xs sm:text-sm">
+            <p className="text-black mb-2 sm:mb-3 text-xs sm:text-sm">
               Get notified via email, SMS, or Call the moment an issue arises—no
               surprises, just timely alerts.
             </p>

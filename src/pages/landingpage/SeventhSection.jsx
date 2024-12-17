@@ -105,8 +105,8 @@ const SeventhSection = () => {
   };
 
   return (
-    <div className="bg-white h-fit w-full">
-      <div className="w-full p-4 md:p-12 h-64 md:h-72 relative">
+    <div className=" h-fit w-full">
+      {/* <div className="w-full p-4 md:p-12 h-64 md:h-72 relative">
         <h2 className="text-lg md:text-xl text-center mb-4 md:mb-6 mt-8 md:mt-12 text-gray-300">
           Trusted by big industries
         </h2>
@@ -138,18 +138,18 @@ const SeventhSection = () => {
             ))}
           </Slider>
         </div>
-      </div>
+      </div> */}
 
       <div className="h-full flex flex-col items-center justify-center p-4">
-        <h2 style={gradientStyle} className="text-white font-semibold text-2xl md:text-4xl lg:text-5xl mt-16 md:mt-28 mb-16 md:mb-24 text-center">
+        <h2 className="text-transparent font-semibold text-2xl md:text-4xl lg:text-5xl mt-16 md:mt-28 mb-16 md:mb-24 text-center bg-clip-text bg-gradient-to-r from-blue-800 to-red-800">
           Frequently Asked Questions
         </h2>
 
-        <div className="w-full max-w-xl md:max-w-2xl font-bold text-white space-y-6 md:space-y-11 mb-16 md:mb-32">
+        <div className="ml-2 mr-2 w-full font-bold text-white space-y-6 md:space-y-11 mb-16 md:mb-32">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-[#171717] rounded-lg overflow-hidden transition-all duration-300 cursor-pointer"
+              className="bg-[#ffffff] rounded-lg overflow-hidden transition-all duration-300 cursor-pointer"
               onClick={() => toggleQuestion(index)}
             >
               <div className="w-full text-left p-3 md:p-4">

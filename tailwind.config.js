@@ -1,6 +1,8 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 const flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette").default;
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 
 export default {
   content: [
@@ -11,6 +13,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["'KG Blank Space'", ...fontFamily.sans],
+        kg: ["'KG Blank Space'", "sans-serif"], // Add custom font
+      },
+
       keyframes: {
         move: {
           "0%": { transform: "translateX(-200px)" },

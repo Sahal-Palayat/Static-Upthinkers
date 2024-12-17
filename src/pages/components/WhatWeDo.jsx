@@ -4,28 +4,28 @@ import { useInView } from "react-intersection-observer";
 
 const features = [
   {
-    title: "Study & Game",
+    title: "School Tutoring",
     icon: Gamepad2,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus cursus quis officia armin. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Personalized academic support to help your child excel with confidence.Our tailored sessions focus on building a strong foundation and enhancing problem-solving skills.",
   },
   {
-    title: "A to Z Programs",
+    title: "Bright Mind Programs",
     icon: BookAbc,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus cursus quis officia armin. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Holistic programs designed to nurture creativity, critical thinking, and resilience. We empower children to think outside the box and prepare them for a dynamic future.",
   },
   {
-    title: "Expert Teacher",
+    title: "(UP)Thinker Club",
     icon: Users,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus cursus quis officia armin. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "A unique initiative to inspire curiosity and foster innovative thinking in kids. Through engaging activities and projects, we help children discover their passions and potential.",
   },
   {
-    title: "Mental Health",
+    title: "Language Ladder",
     icon: Heart,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus cursus quis officia armin. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Step-by-step programs to help your child master new languages with ease. Enhance communication skills and cultural understanding in a fun, interactive way.",
   },
 ];
 
@@ -46,7 +46,7 @@ function FeatureCard({ feature, index }) {
       <motion.div
         whileHover={{
           y: -5,
-          backgroundColor: "#FEE2E2", // Light pink background on hover
+          backgroundColor: "#add0ff", // Light pink background on hover
         }}
         className={`
           relative p-6 bg-white text-gray-800 rounded-[2rem] shadow-lg overflow-hidden
@@ -63,7 +63,7 @@ function FeatureCard({ feature, index }) {
             bg-pink-300/20
           `}
         >
-          <feature.icon className="w-6 h-6 text-pink-500" />
+          <feature.icon className="w-6 h-6 text-[#20477a]" />
         </div>
 
         {/* Content */}
@@ -78,7 +78,7 @@ function FeatureCard({ feature, index }) {
           whileTap={{ scale: 0.95 }}
           className={`
             px-6 py-2 rounded-full text-sm font-medium transition-colors
-            bg-pink-500 text-white hover:bg-pink-600
+            bg-[#20477a] text-white hover:bg-[#20477a]
           `}
         >
           Read More
@@ -95,20 +95,22 @@ export default function WhatWeDo() {
   });
 
   return (
-    <section className="py-24 px-4 bg-pink-50">
+    <section className="py-24 px-4  bg-gradient-to-b bg-white/20 ml-10 mr-10 mb-10 overflow-hidden font-sans backdrop-blur-sm rounded-[60px] transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-16">
           <motion.div
             ref={ref}
             initial={{ opacity: 0, y: -20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
+            animate={inView ? { opacity: 1, y: 0, scale: 1.05 } : {}}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="inline-block"
           >
-            <span className="text-pink-500 lg:text-3xl text-lg font-medium relative">
-              What We Do 
-              <span className="absolute bottom-0 left-1/2 w-10 h-1 bg-pink-500 rounded-full transform -translate-x-1/2" />
+            <span className="text-[#20477a] lg:text-3xl text-2xl font-extrabold relative tracking-wide">
+              What
+              <span className="text-[#621b1b] ml-2">We Do</span>
+              <span className="absolute bottom-0 left-1/2 w-12 h-1 bg-[#20477a] rounded-full transform -translate-x-1/2 animate-pulse" />
             </span>
           </motion.div>
 
@@ -118,7 +120,7 @@ export default function WhatWeDo() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-6 text-4xl lg:text-5xl font-bold text-[#2D3648] leading-tight max-w-3xl mx-auto"
           >
-            Thanks To Get Started With Our School
+          Shaping Young Minds for a Bright Future
           </motion.h2>
         </div>
 

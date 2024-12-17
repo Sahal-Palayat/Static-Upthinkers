@@ -1,48 +1,46 @@
-
-
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, ArrowRight, Menu, X } from 'lucide-react'
-import { NavLink } from 'react-router-dom'
-
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, ArrowRight, Menu, X } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const navItems = [
-  { name: "What we do", href: "#" },
-  { 
-    name: "Our offerings", 
+  { name: "Who We Are", href: "#" },
+  {
+    name: "Our offerings",
     href: "#",
     hasDropdown: true,
     dropdownItems: [
       { name: "Service 1", href: "#" },
       { name: "Service 2", href: "#" },
-    ]
+    ],
   },
-  { name: "Pricing", href: "#" },
+  { name: "What We Do", href: "#" },
   { name: "Blog", href: "#" },
-]
+  { name: "Courses", href: "#" },
+];
 
 export default function NavbarMain() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-      className={`fixed top-3 left-4 right-4 z-50 ${
-        isScrolled ? 'bg-white/50' : 'bg-transparent'
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      className={`fixed top-3 left-10 right-10 z-50 ${
+        isScrolled ? "bg-white/50" : "bg-transparent"
       } backdrop-blur-sm rounded-[60px] transition-colors duration-300`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-10 px-4 sm:px-6 lg:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
@@ -51,7 +49,7 @@ export default function NavbarMain() {
             className="flex-shrink-0"
           >
             <NavLink href="/" className="text-2xl font-bold">
-              fusi<span className="text-cyan-500">∞</span>n
+              <img src="/logo.PNG" className="w-24" alt="" />
             </NavLink>
           </motion.div>
 
@@ -68,9 +66,7 @@ export default function NavbarMain() {
                   className="text-gray-600 hover:text-gray-900 flex items-center gap-1"
                 >
                   {item.name}
-                  {item.hasDropdown && (
-                    <ChevronDown className="w-4 h-4" />
-                  )}
+                  {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
                 </NavLink>
                 {item.hasDropdown && (
                   <motion.div
@@ -80,9 +76,9 @@ export default function NavbarMain() {
                   >
                     <div className="py-1">
                       {item.dropdownItems?.map((dropItem) => (
-                        <NavLink 
+                        <NavLink
                           key={dropItem.name}
-                          href={dropItem.href} 
+                          href={dropItem.href}
                           className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg"
                         >
                           {dropItem.name}
@@ -100,14 +96,7 @@ export default function NavbarMain() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-gray-600 hover:text-gray-900"
-            >
-              Log in
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 bg-black text-white rounded-full flex items-center gap-2"
+              className="px-4 py-2 bg-gradient-to-r from-blue-500 to-red-800 text-white rounded-full flex items-center gap-2"
             >
               Get Demo
               <ArrowRight className="w-4 h-4" />
@@ -136,14 +125,14 @@ export default function NavbarMain() {
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white px-4 py-2 rounded-b-[60px]"
           >
             {navItems.map((item) => (
               <div key={item.name} className="py-2">
-                <NavLink 
+                <NavLink
                   href={item.href}
                   className="block text-gray-600 hover:text-gray-900"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -153,9 +142,9 @@ export default function NavbarMain() {
                 {item.hasDropdown && (
                   <div className="pl-4 mt-2 space-y-2">
                     {item.dropdownItems?.map((dropItem) => (
-                      <NavLink 
+                      <NavLink
                         key={dropItem.name}
-                        href={dropItem.href} 
+                        href={dropItem.href}
                         className="block text-sm text-gray-600 hover:text-gray-900"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -167,9 +156,6 @@ export default function NavbarMain() {
               </div>
             ))}
             <div className="py-2 space-y-2">
-              <button className="w-full text-left text-gray-600 hover:text-gray-900">
-                Log in
-              </button>
               <button className="w-full px-4 py-2 bg-black text-white rounded-full flex items-center justify-center gap-2">
                 Get Demo
                 <ArrowRight className="w-4 h-4" />
@@ -179,6 +165,5 @@ export default function NavbarMain() {
         )}
       </AnimatePresence>
     </motion.nav>
-  )
+  );
 }
-
