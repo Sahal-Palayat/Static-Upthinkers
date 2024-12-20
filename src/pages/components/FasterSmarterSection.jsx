@@ -34,16 +34,16 @@ export default function SecondSection() {
   ];
 
   return (
-    <div className="bg-gradient-to-b bg-white/20 ml-10 mr-10 mb-10 overflow-hidden font-sans backdrop-blur-sm rounded-[60px] transition-colors duration-300  min-h-screen flex flex-col items-center justify-center p-8 space-y-10">
+    <div className="mt-10 bg-gradient-to-b bg-white/20 ml-10 mr-10 mb-10 overflow-hidden font-sans backdrop-blur-sm rounded-[60px] transition-colors duration-300  min-h-screen flex flex-col items-center justify-center p-8 space-y-10">
       <div className="text-center mb-10">
         <div className="grid gap-6 items-center justify-items-center">
           <h1
-            style={gradientStyle}
-            className="md:text-5xl sm:text-2xl font-bold w-full sm:w-3/4 text-center py-6 bg-clip-text text-transparent bg-gradient-to-b from-text-[#621b1b] via-[#800000] to-[#20477a] dark:from-neutral-800 dark:via-[#20477a] dark:to-[#800000]"
+            
+            className="md:text-5xl sm:text-2xl font-bold w-full sm:w-3/4 text-center py-6 bg-clip-text text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7]"
           >
             Proactive Uptime Monitoring for Your Peace of Mind
           </h1>
-          <p className="text-black text-lg max-w-2xl">
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7] text-lg max-w-2xl">
             UptimeWiz delivers round-the-clock monitoring to ensure your website
             or app stays online. We catch issues before they become problems,
             helping you maintain a seamless digital experience for your users.

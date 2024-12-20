@@ -11,6 +11,7 @@ const SeventhSection = () => {
   const toggleQuestion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
   const logos = [
     { name: "Google", url: "/seventhSection/google.webp" },
     { name: "Meta", url: "/seventhSection/meta.webp" },
@@ -39,8 +40,7 @@ const SeventhSection = () => {
         "UptimeWiz can monitor any type of website, web application, or server—including HTTP, HTTPS, TCP, and custom ports.",
     },
     {
-      question:
-        "Can I receive alerts through multiple channels with UptimeWiz?",
+      question: "Can I receive alerts through multiple channels with UptimeWiz?",
       answer:
         "Yes, UptimeWiz allows you to receive alerts via SMS, Email, Slack, Webhooks, and more.",
     },
@@ -49,26 +49,6 @@ const SeventhSection = () => {
       answer:
         "Yes, UptimeWiz offers detailed analytics on website performance, uptime, downtime incidents, and more.",
     },
-    // {
-    //   question: "Is Proactic suitable for small businesses?",
-    //   answer:
-    //     "Yes, Proactic allows you to schedule posts in advance across multiple platforms, helping you maintain a consistent online presence.",
-    // },
-    // {
-    //   question: "Does Proactic offer customer support?",
-    //   answer:
-    //     "Yes, Proactic provides customer support to assist you with any questions or issues you may encounter.",
-    // },
-    // {
-    //   question: "Is there a free trial available for Proactic?",
-    //   answer:
-    //     "Proactic offers a free trial so you can explore its features and see how it can benefit your social media marketing efforts.",
-    // },
-    // {
-    //   question: "How can I get started with Proactic?",
-    //   answer:
-    //     "To get started with Proactic, simply sign up on our website and follow the onboarding process to set up your account.",
-    // },
   ];
 
   const settings = {
@@ -105,47 +85,13 @@ const SeventhSection = () => {
   };
 
   return (
-    <div className=" h-fit w-full">
-      {/* <div className="w-full p-4 md:p-12 h-64 md:h-72 relative">
-        <h2 className="text-lg md:text-xl text-center mb-4 md:mb-6 mt-8 md:mt-12 text-gray-300">
-          Trusted by big industries
-        </h2>
-
-        <div className="absolute left-0 top-0 bottom-0 w-1/4 md:w-1/2 bg-gradient-to-r from-white to-transparent pointer-events-none z-20"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-1/4 md:w-1/2 bg-gradient-to-l from-white to-transparent pointer-events-none z-20"></div>
-
-        <div className="relative overflow-hidden">
-          <Slider {...settings}>
-            {logos.map((logo, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 transition-all  duration-300 ease-in-out p-2"
-                onMouseEnter={() => setHoveredLogo(logo.name)}
-                onMouseLeave={() => setHoveredLogo("")}
-              >
-                <img
-                  loading="lazy"
-                  src={logo.url}
-                  alt={logo.name}
-                  className={`w-full h-full object-contain transition-all duration-300 ${
-                    hoveredLogo === logo.name
-                      ? "filter-none"
-                      : "filter grayscale"
-                  }`}
-                  style={{ width: "80px", height: "40px" }}
-                />
-              </div>
-            ))}
-          </Slider>
-        </div>
-      </div> */}
-
-      <div className="h-full flex flex-col items-center justify-center p-4">
-        <h2 className="text-transparent font-semibold text-2xl md:text-4xl lg:text-5xl mt-16 md:mt-28 mb-16 md:mb-24 text-center bg-clip-text bg-gradient-to-r from-blue-800 to-red-800">
+    <div className="h-fit w-full bg-gradient-to-b bg-white/40 mt-10 mr-10 mx-auto mb-10 mt-10 p-6 font-sans backdrop-blur-sm rounded-[40px] transition-colors duration-300">
+      <div className="h-full flex flex-col items-center justify-center">
+        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7] font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-16 mb-10 text-center">
           Frequently Asked Questions
         </h2>
 
-        <div className="ml-2 mr-2 w-full font-bold text-white space-y-6 md:space-y-11 mb-16 md:mb-32">
+        <div className="w-full font-bold text-white space-y-6 md:space-y-8 mb-16">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -154,19 +100,15 @@ const SeventhSection = () => {
             >
               <div className="w-full text-left p-3 md:p-4">
                 <div className="flex justify-between items-center">
-                  <h3 className="text-[#A3A3A3] text-md md:text-lg font-bold">
+                  <h3 className="text-[#A3A3A3] text-sm sm:text-md md:text-lg font-semibold">
                     {faq.question}
                   </h3>
                 </div>
               </div>
               <div
-                className={`overflow-hidden transition-all duration-700 ${
-                  openIndex === index ? "max-h-96" : "max-h-0"
-                }`}
+                className={`overflow-hidden transition-all duration-700 ${openIndex === index ? "max-h-96" : "max-h-0"}`}
               >
-                <p className="text-[#A3A3A3] font-normal p-3 md:p-4">
-                  {faq.answer}
-                </p>
+                <p className="text-[#A3A3A3] font-normal p-3 md:p-4">{faq.answer}</p>
               </div>
             </div>
           ))}

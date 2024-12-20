@@ -16,30 +16,33 @@ import Footer from "../components/Footer";
 import NavbarAndHero from "../components/Hero";
 import InfiniaShowcase from "./SingleProduct";
 import InfiniteCarousel from "../components/Courses";
+import FooterAnimation from "./FooterAnimation";
 
 const Main = () => {
   return (
     <>
-      
-      <div className="bg-[url('/bg1.jpg')] bg-cover bg-center bg-fixed h-280vh w-full font-monstera">
-      <Home/>
-        {/* <NavbarAndHero/> */}
-        <AboutSection/>
-        <WhatWeDo/>
-        {/* <Courses/> */}
-        <InfiniteCarousel/>
-       {/* <InfiniaShowcase/> */}
-        {/* <FirstSection /> */}
-        {/* <HeroScrollDemo /> */}
-        <ThirdSection />
-        {/* <WhyTrustUs /> */}
-        <ForthSection />
-        <FifthSection />
-        {/* <Pricing /> */}
-        <SeventhSection />
-        <LastSection />
+      <div className="relative md:h-[810vh]   w-full font-monstera">
+        <div className="absolute inset-0 bg-[url('/bg-01.jpg')] bg-cover bg-center bg-fixed opacity-60 "></div>
+        <div className="relative z-10">
+          <Home />
+          {/* <NavbarAndHero/> */}
+          <AboutSection />
+          <WhatWeDo />
+          {/* <Courses/> */}
+          <InfiniteCarousel />
+          {/* <InfiniaShowcase/> */}
+          {/* <FirstSection /> */}
+          {/* <HeroScrollDemo /> */}
+          {/* <ThirdSection /> */}
+          {/* <WhyTrustUs /> */}
+          <ForthSection />
+          <FifthSection />
+          {/* <Pricing /> */}
+          <SeventhSection />
+          <FooterAnimation />
+          {/* <LastSection /> */}
+        </div>
       </div>
-      
     </>
   );
 };

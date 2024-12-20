@@ -96,7 +96,7 @@ export default function NavbarMain() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 bg-gradient-to-r from-blue-500 to-red-800 text-white rounded-full flex items-center gap-2"
+              className="px-4 py-2 bg-gradient-to-r from-blue-500 to-[#2954E7] text-white rounded-full flex items-center gap-2"
             >
               Get Demo
               <ArrowRight className="w-4 h-4" />

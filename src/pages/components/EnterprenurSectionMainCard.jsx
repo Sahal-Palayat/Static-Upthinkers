@@ -41,39 +41,30 @@ export default function TestimonialSection() {
       <div className="absolute inset-0  opacity-10 bg-cover bg-center" />
       <Sparkles />
       <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto text-center">
-        <div className="bg-gradient-to-b from-[#151616] to-transparent h-[300px] w-[300px] md:h-[450px] md:w-[450px] relative rounded-full flex justify-center">
-          <div className="w-12 h-12 md:w-16 md:h-16 mb-8 rounded-full overflow-hidden border border-gray-700 shadow-lg mt-7">
+        <div className="bg-gradient-to-b from-[#2954E7] to-transparent h-[300px] w-[300px] md:h-[450px] md:w-[450px] relative rounded-full flex flex-col items-center justify-center text-white overflow-hidden">
+          <div className="w-16 h-16 md:w-20 md:h-20 mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
             <img
-            loading="lazy"
+              loading="lazy"
               src={testimonials[activeIndex].image}
               alt={testimonials[activeIndex].name}
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
 
-        <div className="h-80 z-10 -mt-40 md:-mt-80">
-          <p
-            className="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center leading-relaxed max-w-xl md:max-w-2xl mx-auto transition-opacity duration-700 ease-in-out"
-            style={{ opacity: 1 }}
-          >
-            {testimonials[activeIndex].quote}
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-2 md:gap-4">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className={`bg-[#151616] rounded-full px-3 py-1 md:px-4 md:py-1 text-sm transition-all duration-300 ease-in-out ${
-                  index === activeIndex
-                    ? "ring-1 ring-[#0E9BB3] scale-105 md:scale-110"
-                    : ""
-                }`}
-              >
-                <span className="font-semibold">{testimonial.name}</span>
-                <span className="text-gray-400"> - {testimonial.title}</span>
-              </div>
-            ))}
+          <div className=" px-3 py-1 rounded-md">
+            <p className="text-lg md:text-xl font-bold mb-1">
+              {testimonials[activeIndex].name}
+            </p>
+          </div>
+          <div className="bg-black/40 px-3 py-1 rounded-md mt-2">
+            <p className="text-sm md:text-base font-medium">
+              {testimonials[activeIndex].title}
+            </p>
+          </div>
+          <div className="bg-black/40 px-4 py-2 rounded-md mt-3">
+            <p className="text-sm md:text-base leading-relaxed">
+              {testimonials[activeIndex].quote}
+            </p>
           </div>
         </div>
       </div>

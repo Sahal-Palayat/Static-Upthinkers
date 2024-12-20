@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -20,39 +19,41 @@ export default function InfiniteCarousel() {
     {
       id: 1,
       title: "React Essentials",
-      image: "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
+      image:
+        "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
     },
     {
       id: 2,
       title: "Advanced JavaScript",
-      image: "https://media.istockphoto.com/id/1353769234/photo/training-and-skill-development-concept-with-icons-of-online-course-conference-seminar-webinar.jpg?s=612x612&w=0&k=20&c=2YJG1My6Lu1T1FnzIPbimRNORcSbSuz6A8zb7HKNpx4=",
+      image:
+        "https://media.istockphoto.com/id/1353769234/photo/training-and-skill-development-concept-with-icons-of-online-course-conference-seminar-webinar.jpg?s=612x612&w=0&k=20&c=2YJG1My6Lu1T1FnzIPbimRNORcSbSuz6A8zb7HKNpx4=",
     },
     {
       id: 3,
       title: "CSS Mastery",
-      image: "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
+      image:
+        "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
     },
     {
       id: 4,
       title: "Node.js Fundamentals",
-      image: "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
+      image:
+        "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
     },
     {
       id: 5,
       title: "Python Basics",
-      image: "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
+      image:
+        "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
     },
   ];
 
-  // Duplicate items for seamless infinite scrolling
   const extendedCourses = [...courses, ...courses];
 
   useEffect(() => {
     if (scrollRef.current) {
       const carousel = scrollRef.current;
       const totalWidth = carousel.scrollWidth;
-      const itemWidth = carousel.firstElementChild?.clientWidth || 0;
-
       const tl = gsap.timeline({
         repeat: -1,
         paused: !isAnimating,
@@ -76,19 +77,19 @@ export default function InfiniteCarousel() {
   }, [isAnimating]);
 
   return (
-    <div className="relative py-12 bg-gradient-to-b bg-white/20 mx-10 mb-10 overflow-hidden font-sans backdrop-blur-sm rounded-[60px] transition-colors duration-300">
-      <h2 className="text-4xl text-center font-bold mt-10 text-indigo-900 mb-12">
+    <div className="relative mt-10 py-12 bg-gradient-to-b from-white/20 via-gray-100 to-white/20 backdrop-blur-sm rounded-[40px] sm:rounded-[60px] mx-4 sm:mx-6 lg:mx-10 overflow-hidden">
+      <h2 className="text-3xl sm:text-4xl text-center font-bold mt-6 text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7] mb-6">
         We Offer An Exclusive
         <br />
         Program For Kids
-        <br /><br />
-        <h4 className="text-2xl text-black font-semibold mx-10">
-          Enroll now to map young minds for a bright future! Mindmap Jr builds confidence, essential habits, and problem-solving skills, setting the foundation for success.
-        </h4>
       </h2>
-      <br />
+      <h4 className="text-lg sm:text-xl text-center text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7] font-semibold mx-4 sm:mx-10 mb-10">
+        Enroll now to map young minds for a bright future! Mindmap Jr builds
+        confidence, essential habits, and problem-solving skills, setting the
+        foundation for success.
+      </h4>
       <div
-        className="relative w-full h-[450px] overflow-hidden"
+        className="relative w-full h-[300px] sm:h-[350px] lg:h-[400px] overflow-hidden"
         onMouseEnter={() => setIsAnimating(false)}
         onMouseLeave={() => setIsAnimating(true)}
       >
@@ -99,19 +100,22 @@ export default function InfiniteCarousel() {
           {extendedCourses.map((course, index) => (
             <div
               key={`${course.id}-${index}`}
-              className={`flex-none w-80 mx-4 h-[400px] bg-white rounded-xl shadow-lg overflow-hidden ${
+              className={`flex-none w-72 sm:w-80 mx-2 sm:mx-4 h-[280px] sm:h-[320px] lg:h-[350px] bg-white rounded-xl shadow-lg overflow-hidden ${
                 animations[index % animations.length]
               }`}
             >
               <img
                 src={course.image}
                 alt={course.title}
-                className="w-full h-60 object-cover rounded-xl"
+                className="w-full h-44 sm:h-48 lg:h-52 object-cover rounded-t-xl"
               />
               <div className="p-4">
-                <h3 className="text-lg font-semibold">{course.title}</h3>
+                <h3 className="text-base sm:text-lg font-semibold">
+                  {course.title}
+                </h3>
                 <p className="mt-2 text-sm text-gray-600">
-                  Dive into {course.title.toLowerCase()} and master its concepts.
+                  Dive into {course.title.toLowerCase()} and master its
+                  concepts.
                 </p>
               </div>
             </div>
@@ -120,11 +124,10 @@ export default function InfiniteCarousel() {
       </div>
 
       <div className="flex justify-center mt-8">
-        <button className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition-colors duration-300">
+        <button className="px-4 sm:px-6 py-2 sm:py-3 bg-[#2954E7] text-white font-semibold rounded-full hover:bg-indigo-700 transition-colors duration-300">
           View All Programs
         </button>
       </div>
     </div>
   );
 }
-
