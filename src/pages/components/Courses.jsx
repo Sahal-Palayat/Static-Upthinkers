@@ -18,34 +18,49 @@ export default function InfiniteCarousel() {
   const courses = [
     {
       id: 1,
-      title: "React Essentials",
+      title: "Mindmap Jr",
+      description:'Enroll now to map young minds for a bright future! Mindmap Jr builds confidence and problem-solving skills, setting the foundation for success.',
       image:
-        "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
+        "./mindmap.jpg",
     },
     {
       id: 2,
-      title: "Advanced JavaScript",
+      title: "Live Group Tuition",
+      description:'Collaborative sessions that boost learning and confidence in a lively group setting.',
       image:
-        "https://media.istockphoto.com/id/1353769234/photo/training-and-skill-development-concept-with-icons-of-online-course-conference-seminar-webinar.jpg?s=612x612&w=0&k=20&c=2YJG1My6Lu1T1FnzIPbimRNORcSbSuz6A8zb7HKNpx4=",
-    },
+       "./livecls.jpg"    },
     {
       id: 3,
-      title: "CSS Mastery",
+      title: "One-on-One Tuition",
+      description:'Personalized sessions focused on individual needs, ensuring dedicated support and academic growth.',
       image:
-        "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
+        "./traffic.jpg",
     },
     {
       id: 4,
-      title: "Node.js Fundamentals",
+      title: "Smart Movers",
+      description:'Empowering Kids with Road Safety for a Safer Tomorrow!',
       image:
-        "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
+      "./traffic1.jpg",
     },
     {
       id: 5,
-      title: "Python Basics",
+      title: "Stage Stars",
+      description:'Speak with Confidence, Shine on Stage!',
       image:
-        "https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-3d-rendered-laptop-computer-showcasing-the-concept-of-e-image_3752947.jpg",
-    },
+       './publicspeak.jpg'    },
+    {
+      id: 6,
+      title: "Creative Hands",
+      description:'Unleash Creativity, One Brushstroke at a Time!',
+      image:
+      './creative.jpg'    },
+    {
+      id: 7,
+      title: "Math Whiz",
+      description:'Unlock the Magic of Numbers!',
+      image:
+      './math.jpg'     },
   ];
 
   const extendedCourses = [...courses, ...courses];
@@ -114,8 +129,7 @@ export default function InfiniteCarousel() {
                   {course.title}
                 </h3>
                 <p className="mt-2 text-sm text-gray-600">
-                  Dive into {course.title.toLowerCase()} and master its
-                  concepts.
+                  {course?.description}
                 </p>
               </div>
             </div>

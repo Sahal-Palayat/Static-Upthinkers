@@ -25,7 +25,7 @@ const features = [
     title: "Language Ladder",
     icon: Heart,
     description:
-      "Step-by-step programs to help your child master new languages with ease. Enhance communication skills and cultural understanding in a fun, interactive way.",
+      " Step-by-step programs to help your child master new languages with ease . Enhance communication skills and cultural understanding in a fun , interactive way. ",
   },
 ];
 

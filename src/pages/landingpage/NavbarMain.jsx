@@ -4,24 +4,25 @@ import { ChevronDown, ArrowRight, Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const navItems = [
-  { name: "Who We Are", href: "#" },
+  { name: "About", href: "#" },
   {
-    name: "Our offerings",
-    href: "#",
-    hasDropdown: true,
-    dropdownItems: [
-      { name: "Service 1", href: "#" },
-      { name: "Service 2", href: "#" },
-    ],
+    name: "Courses", href: "#" 
   },
   { name: "What We Do", href: "#" },
   { name: "Blog", href: "#" },
-  { name: "Courses", href: "#" },
+  { name: "Contact Us", href: "#" },
 ];
 
 export default function NavbarMain() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const handleClick = () => {
+    setIsPopupVisible(true);
+  };
+
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +64,7 @@ export default function NavbarMain() {
               >
                 <NavLink
                   href={item.href}
-                  className="text-gray-600 hover:text-gray-900 flex items-center gap-1"
+                  className="text-gray-600 font-bold hover:text-gray-900 flex items-center gap-1"
                 >
                   {item.name}
                   {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
@@ -98,7 +99,7 @@ export default function NavbarMain() {
               whileTap={{ scale: 0.95 }}
               className="px-4 py-2 bg-gradient-to-r from-blue-500 to-[#2954E7] text-white rounded-full flex items-center gap-2"
             >
-              Get Demo
+             Join Us
               <ArrowRight className="w-4 h-4" />
             </motion.button>
           </div>
@@ -128,13 +129,13 @@ export default function NavbarMain() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white px-4 py-2 rounded-b-[60px]"
+            className="md:hidden bg-transparent px-4 py-2 rounded-b-[60px]"
           >
             {navItems.map((item) => (
               <div key={item.name} className="py-2">
                 <NavLink
                   href={item.href}
-                  className="block text-gray-600 hover:text-gray-900"
+                  className="block text-gray-600 font-bold hover:text-gray-900"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -157,7 +158,7 @@ export default function NavbarMain() {
             ))}
             <div className="py-2 space-y-2">
               <button className="w-full px-4 py-2 bg-black text-white rounded-full flex items-center justify-center gap-2">
-                Get Demo
+                Join Us
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

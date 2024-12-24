@@ -17,14 +17,18 @@ import NavbarAndHero from "../components/Hero";
 import InfiniaShowcase from "./SingleProduct";
 import InfiniteCarousel from "../components/Courses";
 import FooterAnimation from "./FooterAnimation";
+import SplitPopup from "./PopupForm";
 
 const Main = () => {
   return (
     <>
-      <div className="relative md:h-[810vh]   w-full font-monstera">
+      <div className="relative md:h-[622vh]   w-vw font-monstera">
         <div className="absolute inset-0 bg-[url('/bg-01.jpg')] bg-cover bg-center bg-fixed opacity-60 "></div>
         <div className="relative z-10">
           <Home />
+          
+          <SplitPopup showAfter={2000} /> {/* Shows after 2 seconds */}
+         
           {/* <NavbarAndHero/> */}
           <AboutSection />
           <WhatWeDo />
@@ -38,7 +42,7 @@ const Main = () => {
           <ForthSection />
           <FifthSection />
           {/* <Pricing /> */}
-          <SeventhSection />
+          {/* <SeventhSection /> */}
           <FooterAnimation />
           {/* <LastSection /> */}
         </div>

@@ -15,7 +15,7 @@ export default function Home() {
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-gradient-to-r from-[#20477a] to-[#2954E7] bg-clip-text text-transparent text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+                className="bg-gradient-to-r mt-16 from-[#20477a] to-[#2954E7] bg-clip-text text-transparent text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6"
               >
                 Nurturing Early Brilliance
                 <br />
