@@ -44,7 +44,7 @@ export default function AboutSection() {
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7] lg:text-3xl text-2xl font-extrabold relative tracking-wide">
             Who
             <span className="ml-2">We Are</span>
-            <span className="absolute bottom-0 left-1/2 w-12 h-1 bg-[#20477a] rounded-full transform -translate-x-1/2 animate-pulse" />
+            {/* <span className="absolute bottom-0 left-1/2 w-12 h-1 bg-[#20477a] rounded-full transform -translate-x-1/2 animate-pulse" /> */}
           </span>
         </motion.div>
 

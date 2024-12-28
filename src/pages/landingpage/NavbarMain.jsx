@@ -44,6 +44,7 @@ export default function NavbarMain() {
       <div className="max-w-7xl mx-10 px-4 sm:px-6 lg:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
+          
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
