@@ -1,24 +1,50 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
+import MindmapImg from "../../../public/mindmap.jpg";
+import axios from "axios";
 
-
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { X } from 'lucide-react'
-
-
-export default function SplitPopup() {
-  const [isVisible, setIsVisible] = useState(false)
+export default function SplitPopupManual({
+  open,
+  setOpen,
+  imageShow,
+  initial,
+  typeOflead,
+}) {
+  const handleSubmit = (e) => {
+    if(!e.target.name.value || !e.target.phone.value){
+       alert(
+        "please fill the form"
+       )
+    }
+    e.preventDefault();
+    const url =
+      "https://script.google.com/macros/s/AKfycbztjpAzKEhf85Ulfj0k4d-N-97IlQ9dE5Ozo3FxqLmCyr_xG8F55CrSvoV2jnxi99Wz/exec";
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `Name=${e.target.name.value}&Phone=${e.target.phone.value}&TypeofLead=${typeOflead}`,
+    })
+      .then((res) => res.text())
+      .then((data) => {
+        setOpen(false)
+      })
+      .catch((error) => console.log(error));
+  };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true)
-    }, 3000)
+    if (initial) {
+      const timer = setTimeout(() => {
+        setOpen(true);
+      }, 3000);
 
-    return () => clearTimeout(timer)
-  }, [])
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   return (
     <AnimatePresence>
-      {isVisible && (
+      {open && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -34,7 +60,7 @@ export default function SplitPopup() {
           >
             {/* Close Button */}
             <button
-              onClick={() => setIsVisible(false)}
+              onClick={() => setOpen(false)}
               className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 z-10"
             >
               <X className="h-6 w-6" />
@@ -46,13 +72,13 @@ export default function SplitPopup() {
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="w-full md:w-3/3 bg-yellow-300"
+                className="w-full md:w-3/3 bg-cyan-200"
               >
-                <div className="relative h-52 md:h-full min-h-[300px] bg-yellow-300 p-8 flex items-center justify-center">
+                <div className="relative h-52 md:h-full min-h-[300px] bg-cyan-200 p-8 flex items-center justify-center">
                   <div className="absolute inset-0 overflow-hidden">
                     <img
-                      src="./mindmap.jpg"
-                      alt="Interior design"
+                      src={imageShow ? imageShow : MindmapImg}
+                      alt="please join"
                       className="w-full h-full object-fit"
                     />
                   </div>
@@ -82,28 +108,24 @@ export default function SplitPopup() {
                     transition={{ delay: 0.5 }}
                     className="space-y-4"
                     onSubmit={(e) => {
-                      e.preventDefault()
+                      e.preventDefault();
                       // Handle form submission
+                      handleSubmit(e);
                     }}
                   >
                     <div className="space-y-2">
                       <input
-                        type="email"
-                        placeholder="Email"
+                        type="Name"
+                        placeholder="Name"
+                        name="name"
                         className="w-full px-4 py-2 border rounded-full"
                       />
                     </div>
                     <div className="space-y-2">
                       <input
                         type="tel"
+                        name="phone"
                         placeholder="Phone Number"
-                        className="w-full px-4 py-2 border rounded-full"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <input
-                        type="password"
-                        placeholder="Password"
                         className="w-full px-4 py-2 border rounded-full"
                       />
                     </div>
@@ -130,6 +152,5 @@ export default function SplitPopup() {
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }
-
