@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Instagram, Facebook, Linkedin, Mail } from "lucide-react";
+import toastSuccess, { toastError } from "./Toastify";
 
 export default function FooterAnimation() {
   const [email, setEmail] = useState("");
@@ -8,16 +9,42 @@ export default function FooterAnimation() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    // Add your newsletter logic here
-    setEmail("");
-    setTimeout(() => setIsSubmitted(false), 3000);
+    if (!e.target.email.value) {
+      console.log("TOAST BEFORE");
+      toastError({
+        title: "Please fill the Details",
+      });
+      return;
+    }
+    const url =
+      "https://script.google.com/macros/s/AKfycbwDhLRxl7IJwv5rIeWajlbjVSNZljUqZqh8CpluUUUj5hHFFoc_96OVOan1Lpfs5IQ9/exec";
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `Email=${e.target.email.value}`,
+    })
+      .then((res) => res.text())
+      .then((data) => {
+        console.log(data, "DATA");
+        if (data === "Added..") {
+          toastSuccess({
+            title: "Subscribed",
+          });
+          setOpen(false);
+        }
+      })
+      .catch((error) => console.log(error));
   };
-
   const socialIcons = [
-    { icon: Instagram, href: "https://www.instagram.com/upthinkers_learninghub?igsh=MTcwYmNvdmw0MnBicw==" },
-    { icon: Facebook, href: "#" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/upthinkers-learning-hub" },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/upthinkers_learninghub?igsh=MTcwYmNvdmw0MnBicw==",
+    },
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61557346357697" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/upthinkers-learning-hub",
+    },
     { icon: Mail, href: "mailto:upthinkers99@gmail.com" },
   ];
 
@@ -43,15 +70,13 @@ export default function FooterAnimation() {
         >
           <h2 className="text-2xl font-medium mb-4">Newsletter</h2>
           <p className="text-muted-foreground mb-6">
-            Your shortcut to crafting your dream space hassle-free. It's
-            customised, eco-friendly, installed in a flash, and built to last.
+            Join our newsletter to stay up to date
           </p>
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="email"
+              name="email"
               placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               required
               className="w-full bg-transparent border-b border-muted-foreground px-2 py-1 focus-visible:ring-0 focus-visible:border-primary"
             />
@@ -80,7 +105,7 @@ export default function FooterAnimation() {
               onClick={(e) => {
                 handleClickSection(e, "#about");
               }}
-            > 
+            >
               About Us
             </a>
             <a
@@ -101,8 +126,8 @@ export default function FooterAnimation() {
             <a
               href="#"
               className="block text-muted-foreground hover:text-primary transition-colors"
-              onClick={(e)=>{
-                handleClickSection(e,"#courses")
+              onClick={(e) => {
+                handleClickSection(e, "#courses");
               }}
             >
               Courses

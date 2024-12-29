@@ -27,7 +27,7 @@ export default function NavbarMain() {
     e.preventDefault();
     if (id === "#contactus") {
       setOpen(true);
-      setImage("./join_us.png");
+      setImage("./reg_form.jpg");
       return;
     }
     window.location.hash = id;
@@ -116,7 +116,7 @@ export default function NavbarMain() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
-                  setImage("./join_us.png");
+                  setImage("./reg_form.jpg");
                   setOpen(true);
                   setInitial(false);
                 }}

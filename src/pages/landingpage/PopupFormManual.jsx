@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import MindmapImg from "../../../public/mindmap.jpg";
 import axios from "axios";
+import { toastError, toastSuccess } from "./Toastify";
 
 export default function SplitPopupManual({
   open,
@@ -13,9 +14,11 @@ export default function SplitPopupManual({
 }) {
   const handleSubmit = (e) => {
     if(!e.target.name.value || !e.target.phone.value){
-       alert(
-        "please fill the form"
-       )
+       console.log("TOAST BEFORE");
+      toastError({
+        title:"Please fill the Details"
+      })
+       return
     }
     e.preventDefault();
     const url =
@@ -27,7 +30,13 @@ export default function SplitPopupManual({
     })
       .then((res) => res.text())
       .then((data) => {
-        setOpen(false)
+        console.log(data,"DATA");
+        if(data === "Added.."){
+          toastSuccess({
+          title:"Submitted Successfully"
+          })
+          setOpen(false)
+        }
       })
       .catch((error) => console.log(error));
   };

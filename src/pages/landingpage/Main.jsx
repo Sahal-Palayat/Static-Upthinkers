@@ -18,6 +18,7 @@ import InfiniaShowcase from "./SingleProduct";
 import InfiniteCarousel from "../components/Courses";
 import FooterAnimation from "./FooterAnimation";
 import SplitPopup from "./PopupForm";
+import { ToastProvider } from "./Toastify";
 
 const Main = () => {
   return (
@@ -41,6 +42,7 @@ const Main = () => {
           {/* <Pricing /> */}
           {/* <SeventhSection /> */}
           <FooterAnimation />
+          <ToastProvider />
           {/* <LastSection /> */}
         </div>
       </div>

@@ -21,10 +21,9 @@ export const Header = () => {
             <div className="flex flex-col items-center justify-center h-full">
               {/* <MdOutlineForwardToInbox className="text-[#111111] w-16 h-16 flex-shrink-0  rounded-lg p-2" /> */}
               <h1 className="text-lg md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7]  mb-2 text-center">
-               Parent-Child Empowerment
+                Parent-Child Empowerment
               </h1>
               <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a] font-bold mb-8 text-center">
-               
                 By involving parents in the journey, we foster a supportive
                 environment that nurtures academic and personal growth.
               </p>
@@ -36,17 +35,15 @@ export const Header = () => {
             <div className="flex flex-col items-center justify-center h-full">
               {/* <TbFidgetSpinner className="text-[#11111] w-16 h-16 flex-shrink-0  rounded-lg p-2" /> */}
               <h1 className="text-lg md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7] mb-2 text-center">
-                Growth-Centered Learning
+                Holistic Psychological Support
               </h1>
               <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a] font-bold mb-8 text-center">
-                Our programs combine academic growth with emotional well-being,
-                ensuring children thrive in every aspect of life.
+                Our programs emphasize mental health and well-being, offering a
+                psychological
               </p>
             </div>
           </div>
         </div>
-
-
 
         <div className="flex flex-col md:flex-row w-full gap-14">
           {/* First Card */}
@@ -54,11 +51,12 @@ export const Header = () => {
             <div className="flex flex-col items-center justify-center h-full">
               {/* <MdOutlineForwardToInbox className="text-[#111111] w-16 h-16 flex-shrink-0  rounded-lg p-2" /> */}
               <h1 className="text-lg md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7]  mb-2 text-center">
-              Behavioral Manners
-                            </h1>
+                Emotional and Social Development
+              </h1>
               <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a] font-bold mb-8 text-center">
-               
-              We guide children to develop positive behavioral manners, fostering respect, kindness, and consideration in their interactions with others.
+                We focus on fostering emotional intelligence, helping children
+                build healthy relationships, improve self-regulation, and grow
+                into empathetic, confident individuals.
               </p>
             </div>
           </div>
@@ -68,17 +66,16 @@ export const Header = () => {
             <div className="flex flex-col items-center justify-center h-full">
               {/* <TbFidgetSpinner className="text-[#11111] w-16 h-16 flex-shrink-0  rounded-lg p-2" /> */}
               <h1 className="text-lg md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7] mb-2 text-center">
-              Academic Excellence
+                Academic Excellence
               </h1>
               <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a] font-bold mb-8 text-center">
-              We encourage children to explore challenges with curiosity and build the resilience to adapt and innovate.
-
+                We empower children to achieve their highest potential by
+                fostering curiosity, critical thinking, and resilience in
+                academics and beyond.
               </p>
             </div>
           </div>
         </div>
-
-       
       </div>
     </div>
   );
