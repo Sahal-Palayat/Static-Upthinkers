@@ -135,7 +135,7 @@ export default function Footer() {
                     {link.name}
                     {link.isNew && (
                       <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                        New
+                        New 
                       </span>
                     )}
                   </motion.a>
