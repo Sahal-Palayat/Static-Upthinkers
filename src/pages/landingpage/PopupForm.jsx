@@ -109,7 +109,7 @@ export default function SplitPopup() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full rounded-full bg-black text-white hover:bg-gray-800"
+                      className="w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-900 text-white hover:bg-gray-800"
                     >
                       Join Us
                     </button>

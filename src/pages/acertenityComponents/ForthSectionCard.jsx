@@ -23,7 +23,7 @@ export const Header = () => {
               <h1 className="text-lg md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7]  mb-2 text-center">
                 Parent-Child Empowerment
               </h1>
-              <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a] font-bold mb-8 text-center">
+              <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a]  mb-8 text-center">
                 By involving parents in the journey, we foster a supportive
                 environment that nurtures academic and personal growth.
               </p>
@@ -35,9 +35,9 @@ export const Header = () => {
             <div className="flex flex-col items-center justify-center h-full">
               {/* <TbFidgetSpinner className="text-[#11111] w-16 h-16 flex-shrink-0  rounded-lg p-2" /> */}
               <h1 className="text-lg md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7] mb-2 text-center">
-                Holistic Psychological Support
+                Psychological Support
               </h1>
-              <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a] font-bold mb-8 text-center">
+              <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a]  mb-8 text-center">
                 Our programs emphasize mental health and well-being, offering a
                 psychological
               </p>
@@ -53,7 +53,7 @@ export const Header = () => {
               <h1 className="text-lg md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7]  mb-2 text-center">
                 Emotional and Social Development
               </h1>
-              <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a] font-bold mb-8 text-center">
+              <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a]  mb-8 text-center">
                 We focus on fostering emotional intelligence, helping children
                 build healthy relationships, improve self-regulation, and grow
                 into empathetic, confident individuals.
@@ -68,7 +68,7 @@ export const Header = () => {
               <h1 className="text-lg md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7] mb-2 text-center">
                 Academic Excellence
               </h1>
-              <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a] font-bold mb-8 text-center">
+              <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a]  mb-8 text-center">
                 We empower children to achieve their highest potential by
                 fostering curiosity, critical thinking, and resilience in
                 academics and beyond.

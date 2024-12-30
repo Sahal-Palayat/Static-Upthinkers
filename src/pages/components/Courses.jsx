@@ -90,7 +90,7 @@ export default function InfiniteCarousel() {
 
   return (
     <>
-    <div id='courses' className="relative mt-10 py-12 bg-gradient-to-b from-white/20 via-gray-100 to-white/20 backdrop-blur-sm rounded-[40px] sm:rounded-[60px] mx-4 sm:mx-6 lg:mx-10 overflow-hidden">
+    <div id='courses' className=" relative mt-10 py-12 bg-gradient-to-b from-white/20 via-gray-100 to-white/20 backdrop-blur-sm rounded-[40px] sm:rounded-[60px] mx-4 sm:mx-6 lg:mx-10 overflow-hidden">
       <h2 className="text-3xl sm:text-4xl text-center font-bold mt-6 text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7] mb-6">
         We Offer An Exclusive
         <br />
@@ -107,7 +107,7 @@ export default function InfiniteCarousel() {
           {extendedCourses.map((course, index) => (
             <div
               key={`${course.id}-${index}`}
-              className={`mx-10 flex flex-col justify-between sm:w-80 h-[420px] bg-white rounded-xl shadow-lg overflow-hidden ${
+              className={`flex flex-col justify-between sm:w-80 h-[420px] bg-white rounded-xl shadow-lg overflow-hidden ${
                 animations[index % animations.length]
               }`}
             >
@@ -134,8 +134,8 @@ export default function InfiniteCarousel() {
                     setOpen(true)
                     setImage(course.image)
                   }}
-                  className="w-full sm:w-auto px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-colors bg-[#20477a] text-white hover:bg-[#2954E7]"
-                >
+                  className="w-full sm:w-auto px-4 sm:px-6 py-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-blue-900 hover:from-indigo-500 hover:to-blue-500"
+                  >
                   More info
                 </motion.button>
               </div>

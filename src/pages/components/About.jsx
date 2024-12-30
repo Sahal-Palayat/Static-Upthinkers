@@ -22,7 +22,7 @@ export default function AboutSection() {
     <>
       <div
         id="about"
-        className="relative min-h-screen bg-gradient-to-b bg-white/20 mx-4 sm:mx-8 lg:mx-10 mb-10 overflow-hidden font-sans backdrop-blur-sm rounded-[40px] transition-colors duration-300"
+        className="mt-10 relative min-h-screen bg-gradient-to-b bg-white/20 mx-4 sm:mx-8 lg:mx-10 mb-10 overflow-hidden font-sans backdrop-blur-sm rounded-[40px] transition-colors duration-300"
       >
         {/* Decorative Circles */}
         <div className="absolute inset-0 overflow-hidden">
@@ -66,7 +66,7 @@ export default function AboutSection() {
               <img
                 src="https://www.r2sasheville.org/uploads/1/6/2/5/16256276/untitled-design-68_orig.png"
                 alt="Children learning"
-                className="w-full h-64 sm:h-80 lg:h-auto"
+                className="w-full object-cover  h-64 sm:h-80 lg:h-auto"
               />
             </motion.div>
 

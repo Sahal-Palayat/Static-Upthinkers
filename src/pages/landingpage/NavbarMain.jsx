@@ -64,8 +64,8 @@ export default function NavbarMain() {
               animate={{ opacity: 1 }}
               className="flex-shrink-0"
             >
-              <NavLink href="/" className="text-2xl font-bold">
-                <img src="/logo.PNG" className="w-24" alt="" />
+              <NavLink href="/" className="text-2xl  font-bold">
+                <img src="/logo.PNG" className="w-24 " alt="" />
               </NavLink>
             </motion.div>
 
@@ -120,7 +120,7 @@ export default function NavbarMain() {
                   setOpen(true);
                   setInitial(false);
                 }}
-                className="px-4 py-2 bg-gradient-to-r from-blue-500 to-[#2954E7] text-white rounded-full flex items-center gap-2"
+                className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-900 text-white rounded-full flex items-center gap-2"
               >
                 Join Us
                 <ArrowRight className="w-4 h-4" />
@@ -159,7 +159,10 @@ export default function NavbarMain() {
                   <NavLink
                     href={item.href}
                     className="block text-gray-600 font-bold hover:text-gray-900"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      handleClickSection(e, item.href);
+                      setIsMobileMenuOpen(false);
+                    }}
                   >
                     {item.name}
                   </NavLink>
