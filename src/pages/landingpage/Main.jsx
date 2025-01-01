@@ -23,7 +23,7 @@ import { ToastProvider } from "./Toastify";
 const Main = () => {
   return (
     <>
-      <div className="relative sm:h-[620vh] md:h-[640vh] lg:h-[642vh] w-vw font-monstera">
+      <div className="relative h-vh w-vw font-monstera">
         <div className="absolute inset-0 bg-[url('/bg-01.jpg')] bg-cover bg-center bg-fixed opacity-60 "></div>
         <div className="relative z-10">
           <Home />
