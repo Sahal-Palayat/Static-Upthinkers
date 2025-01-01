@@ -18,22 +18,20 @@ import InfiniaShowcase from "./SingleProduct";
 import InfiniteCarousel from "../components/Courses";
 import FooterAnimation from "./FooterAnimation";
 import SplitPopup from "./PopupForm";
+import { ToastProvider } from "./Toastify";
 
 const Main = () => {
   return (
     <>
-      <div className="relative md:h-[622vh]   w-vw font-monstera">
+      <div className="relative h-screen md:h-[642vh] w-vw font-monstera">
         <div className="absolute inset-0 bg-[url('/bg-01.jpg')] bg-cover bg-center bg-fixed opacity-60 "></div>
         <div className="relative z-10">
           <Home />
-          
-          <SplitPopup showAfter={2000} /> {/* Shows after 2 seconds */}
-         
           {/* <NavbarAndHero/> */}
+          <InfiniteCarousel />
           <AboutSection />
           <WhatWeDo />
           {/* <Courses/> */}
-          <InfiniteCarousel />
           {/* <InfiniaShowcase/> */}
           {/* <FirstSection /> */}
           {/* <HeroScrollDemo /> */}
@@ -44,6 +42,7 @@ const Main = () => {
           {/* <Pricing /> */}
           {/* <SeventhSection /> */}
           <FooterAnimation />
+          <ToastProvider />
           {/* <LastSection /> */}
         </div>
       </div>
