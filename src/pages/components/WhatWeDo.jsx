@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import SplitPopup from "../landingpage/PopupForm";
 import SplitPopupManual from "../landingpage/PopupFormManual";
-import joinUsImage from "../../../public/join_us.png"
+import joinUsImage from "../../../public/reg_form.jpg";
 
 const features = [
   {
@@ -26,14 +26,14 @@ const features = [
     icon: Users,
     description:
       "A unique initiative to inspire curiosity and foster innovative thinking in kids. Through engaging activities and projects, we help children discover their passions and potential.",
-    imageSrc:joinUsImage,
+    imageSrc: joinUsImage,
   },
   {
     title: "Language Ladder",
     icon: Heart,
     description:
       " Step-by-step programs to help your child master new languages with ease . Enhance communication skills and cultural understanding in a fun , interactive way. ",
-    imageSrc: './reg_form.jpg',
+    imageSrc: joinUsImage,
   },
 ];
 
@@ -110,7 +110,10 @@ export default function WhatWeDo() {
 
   return (
     <>
-      <section id="service" className="relative py-12 bg-gradient-to-b from-white/20  to-white/20 backdrop-blur-sm rounded-[40px] sm:rounded-[60px] transition-colors duration-300 mx-4 sm:mx-6 lg:mx-10">
+      <section
+        id="service"
+        className="relative py-12 bg-gradient-to-b from-white/20  to-white/20 backdrop-blur-sm rounded-[40px] sm:rounded-[60px] transition-colors duration-300 mx-4 sm:mx-6 lg:mx-10"
+      >
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-12 sm:mb-16">
@@ -154,7 +157,12 @@ export default function WhatWeDo() {
           </div>
         </div>
       </section>
-      <SplitPopupManual typeOflead={"What we do join us"} open={isVisible} setOpen={setVisible} imageShow={image} />
+      <SplitPopupManual
+        typeOflead={"What we do join us"}
+        open={isVisible}
+        setOpen={setVisible}
+        imageShow={image}
+      />
     </>
   );
 }
