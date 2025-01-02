@@ -33,7 +33,7 @@ const features = [
     icon: Heart,
     description:
       " Step-by-step programs to help your child master new languages with ease . Enhance communication skills and cultural understanding in a fun , interactive way. ",
-    imageSrc: './join_us.png',
+    imageSrc: './reg_form.jpg',
   },
 ];
 

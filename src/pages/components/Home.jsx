@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </div>
       <SplitPopupManual
-        imageShow={"./join_us.png"}
+        imageShow={"./reg_form.jpg"}
         open={open}
         setOpen={setOpen}
         typeOflead={"homepage joinus"}
