@@ -66,18 +66,20 @@ export default function InfiniteCarousel() {
         "Math Whiz introduces numbers and helps kids develop strong mathematical skills. ",
       image: "./math.jpg",
     },
-];
-
-  
-  
+  ];
 
   const extendedCourses = [...courses, ...courses];
 
   const settings = {
     slidesToShow: 4,
-    slidesToScroll: 2,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000, // Adjust speed for smoother animation
+    speed: 800, // Control animation duration
+    cssEase: "ease-in-out", // Smoother easing
+    infinite: true, // Enable infinite scrolling
+    pauseOnHover: false, // Optional: Ensures autoplay continues when hovered
+    draggable: true, // Optional: Allows users to drag the slides
+    swipeToSlide: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -116,44 +118,45 @@ export default function InfiniteCarousel() {
         <div>
           <Slider {...settings}>
             {extendedCourses.map((course, index) => (
-             <div
-             key={`${course.id}-${index}`}
-             className={`flex flex-col justify-between sm:w-80 h-[420px] bg-white rounded-xl shadow-lg overflow-hidden ${
-               animations[index % animations.length]
-             } relative`} // Added relative positioning to the parent
-           >
-             <div>
-               <img
-                 src={course.image}
-                 alt={course.title}
-                 className="w-full h-44 sm:h-48 lg:h-52 object-cover rounded-t-xl"
-               />
-               <div className="p-4">
-                 <h3 className="text-base sm:text-lg font-semibold">
-                   {course.title}
-                 </h3>
-                 <p className="mt-2 text-sm text-gray-600">
-                   {course?.description}
-                 </p>
-               </div>
-             </div>
-           
-             {/* Button section */}
-             <div className="absolute bottom-2 left-0 w-full p-4 flex justify-start">  {/* Added absolute positioning and fixed bottom */}
-               <motion.button
-                 whileHover={{ scale: 1.05 }}
-                 whileTap={{ scale: 0.95 }}
-                 onClick={() => {
-                   setOpen(true);
-                   setImage(course.image);
-                 }}
-                 className="w-full sm:w-auto px-4 sm:px-6 py-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-blue-900 hover:from-indigo-500 hover:to-blue-500"
-               >
-                 More info
-               </motion.button>
-             </div>
-           </div>
-           
+              <div
+                key={`${course.id}-${index}`}
+                className={`flex flex-col justify-between sm:w-80 h-[420px] bg-white rounded-xl shadow-lg overflow-hidden ${
+                  animations[index % animations.length]
+                } relative`} // Added relative positioning to the parent
+              >
+                <div>
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="w-full h-44 sm:h-48 lg:h-52 object-cover rounded-t-xl"
+                  />
+                  <div className="p-4">
+                    <h3 className="text-base sm:text-lg font-semibold">
+                      {course.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-600">
+                      {course?.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Button section */}
+                <div className="absolute bottom-2 left-0 w-full p-4 flex justify-start">
+                  {" "}
+                  {/* Added absolute positioning and fixed bottom */}
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => {
+                      setOpen(true);
+                      setImage(course.image);
+                    }}
+                    className="w-full sm:w-auto px-4 sm:px-6 py-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-blue-900 hover:from-indigo-500 hover:to-blue-500"
+                  >
+                    More info
+                  </motion.button>
+                </div>
+              </div>
             ))}
           </Slider>
         </div>
