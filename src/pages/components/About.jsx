@@ -78,7 +78,7 @@ export default function AboutSection() {
               className="lg:col-span-3"
             >
               <p className="text-gray-600 leading-relaxed text-base sm:text-lg lg:text-xl">
-                At Upthinkers, we believe in nurturing children’s potential
+                At UpThinkers, we believe in nurturing children’s potential
                 through mindful learning. Our approach combines emotional
                 well-being with academic growth, helping children thrive in
                 every aspect of life. We empower both kids and parents with the

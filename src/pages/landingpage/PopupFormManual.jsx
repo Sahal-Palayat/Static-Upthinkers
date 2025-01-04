@@ -159,7 +159,7 @@ export default function SplitPopupManual({
                       transition={{ delay: 0.6 }}
                       className="text-center text-sm text-gray-500 mt-6"
                     >
-                      © 2024 upthinkers.
+                      © 2024 UpThinkers.
                     </motion.p>
                   </div>
                 </motion.div>
