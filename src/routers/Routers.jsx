@@ -15,6 +15,7 @@ const Routers = () => {
       <Route path="/blogs" element={<Blog />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/features" element={<Features />} />
+      <Route path="/course-details" element={<Features />} />
       {/* <Route path="/pricing" element={<PricingMain />} /> */}
     </Routes>
   );

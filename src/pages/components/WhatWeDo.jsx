@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import SplitPopup from "../landingpage/PopupForm";
 import SplitPopupManual from "../landingpage/PopupFormManual";
-import joinUsImage from "../../../public/join_us.png"
+import joinUsImage from "../../../public/reg_form.jpg";
 
 const features = [
   {
@@ -26,14 +26,14 @@ const features = [
     icon: Users,
     description:
       "A unique initiative to inspire curiosity and foster innovative thinking in kids. Through engaging activities and projects, we help children discover their passions and potential.",
-    imageSrc:joinUsImage,
+    imageSrc: joinUsImage,
   },
   {
     title: "Language Ladder",
     icon: Heart,
     description:
       " Step-by-step programs to help your child master new languages with ease . Enhance communication skills and cultural understanding in a fun , interactive way. ",
-    imageSrc: './join_us.png',
+    imageSrc: joinUsImage,
   },
 ];
 
@@ -110,7 +110,10 @@ export default function WhatWeDo() {
 
   return (
     <>
-      <section id="service" className="relative py-12 bg-gradient-to-b from-white/20  to-white/20 backdrop-blur-sm rounded-[40px] sm:rounded-[60px] transition-colors duration-300 mx-4 sm:mx-6 lg:mx-10">
+      <section
+        id="service"
+        className="relative py-12 bg-gradient-to-b from-white/20  to-white/20 backdrop-blur-sm rounded-[40px] sm:rounded-[60px] transition-colors duration-300 mx-4 sm:mx-6 lg:mx-10"
+      >
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-12 sm:mb-16">
@@ -133,7 +136,15 @@ export default function WhatWeDo() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-6 text-2xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#20477a] to-[#2954E7] leading-tight max-w-3xl mx-auto"
+              className="mt-6 text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-3xl mx-auto"
+              style={{
+                backgroundImage: "linear-gradient(to right, #20477a, #2954E7)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                lineHeight: "1.2", // Ensure proper spacing for descenders
+                paddingBottom: "0.2em", // Prevent descenders from being clipped
+              }}
             >
               Shaping Young Minds for a Bright Future
             </motion.h2>
@@ -154,7 +165,12 @@ export default function WhatWeDo() {
           </div>
         </div>
       </section>
-      <SplitPopupManual typeOflead={"What we do join us"} open={isVisible} setOpen={setVisible} imageShow={image} />
+      <SplitPopupManual
+        typeOflead={"What we do join us"}
+        open={isVisible}
+        setOpen={setVisible}
+        imageShow={image}
+      />
     </>
   );
 }

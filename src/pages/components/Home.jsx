@@ -19,7 +19,16 @@ export default function Home() {
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-gradient-to-r mt-16 from-[#20477a] to-[#2954E7] bg-clip-text text-transparent text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+                  className="mt-16 font-bold leading-tight mb-6 text-4xl sm:text-5xl lg:text-6xl"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, #20477a, #2954E7)",
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    color: "transparent",
+                    lineHeight: "1.2", // Adjust line height to prevent cutting off descenders
+                    paddingBottom: "0.2em", // Add padding to give extra space for descenders
+                  }}
                 >
                   Nurturing Early Brilliance
                   <br />
@@ -73,7 +82,7 @@ export default function Home() {
         </div>
       </div>
       <SplitPopupManual
-        imageShow={"./join_us.png"}
+        imageShow={"./reg_form.jpg"}
         open={open}
         setOpen={setOpen}
         typeOflead={"homepage joinus"}

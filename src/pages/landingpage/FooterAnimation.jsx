@@ -52,7 +52,7 @@ export default function FooterAnimation() {
     e.preventDefault();
     if (id === "#contactus") {
       setOpen(true);
-      setImage("./join_us.png");
+      setImage("./reg_form.jpg");
       return;
     }
     window.location.hash = id;
