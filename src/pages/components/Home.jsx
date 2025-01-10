@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <>
       <div className="min-h-screen pb-10">
-        <NavbarMain />
         <div className="pt-12 pb-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="relative flex flex-col-reverse lg:flex-row items-center justify-between h-auto lg:h-screen w-full gap-8 px-4 lg:px-8">

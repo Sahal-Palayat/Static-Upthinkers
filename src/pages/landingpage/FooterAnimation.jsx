@@ -103,7 +103,7 @@ export default function FooterAnimation() {
           href="#about"
           className="block text-muted-foreground hover:text-primary transition-colors"
         >
-          About Us
+          About Us  
         </a>
         <a
           href="#service"

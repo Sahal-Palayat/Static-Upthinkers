@@ -41,8 +41,8 @@ const Main = () => {
           <FifthSection />
           {/* <Pricing /> */}
           {/* <SeventhSection /> */}
-          <FooterAnimation />
-          <ToastProvider />
+          {/* <FooterAnimation /> */}
+          {/* <ToastProvider /> */}
           {/* <LastSection /> */}
         </div>
       </div>
