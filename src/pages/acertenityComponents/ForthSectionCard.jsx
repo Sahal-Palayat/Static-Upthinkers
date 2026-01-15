@@ -67,8 +67,15 @@ export const Header = () => {
 
               <p className="max-w-2xl text-sm md:text-xl mt-2 text-[#20477a] mb-8 text-center">
                 Our programs emphasize mental health and well-being, offering a
-                psychological approach to support emotional balance, resilience,
-                and growth.
+                psychological approach through{" "}
+                <a
+                  href="https://psyra.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Psyra
+                </a>{" "}
+                to support emotional balance, resilience, and growth.
               </p>
             </div>
           </div>
